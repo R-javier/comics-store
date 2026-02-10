@@ -1,3 +1,4 @@
+//Registar clientes
 import { Controller } from '@nestjs/common';
 
 @Controller('customers')
