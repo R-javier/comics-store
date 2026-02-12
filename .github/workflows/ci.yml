@@ -25,5 +25,22 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Run tests
+        #Lint 
+      - name: Lint
+        run: npm run lint
+
+        #type check
+      - name: Type check (tsc --noEmit)
+        run: npx tsc -p tsconfig.json --noEmit
+
+        #Unit tests
+      - name: Run unit tests
         run: npm test
+
+        #E2E tests
+      - name: Run E2E tests
+        run: npm run test:e2e
+
+        #Build
+      - name: Build
+        run: npm run build
