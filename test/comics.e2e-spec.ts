@@ -23,7 +23,7 @@ describe('Comics endpoints (e2e)', () => {
     it('GET /comics', async () => {
         const res = await request(app.getHttpServer()).get('/comics');
         expect(res.status).toBe(200);
-        expect(res.text).toContain('Traigo todos los comics');
+        expect(res.text).toContain('Me traigo todos los comics');
     })
 
     it('POST /comics/:id', async () => {
@@ -31,13 +31,13 @@ describe('Comics endpoints (e2e)', () => {
         .post('/comics')
         .send({ title: 'Batman #1' })
         expect(res.status).toBe(201)
-        expect(res.text).toContain('Agrego comic')
+        expect(res.text).toContain('Agrego comics')
     });
 
     it('DELETE /comics/:id', async() => {
         const res = await request(app.getHttpServer())
         .delete('/comics/1')
         expect(res.status).toBe(200)
-        expect(res.text).toContain('borro comic')
+        expect(res.text).toContain('Borro comics')
     });
 });
